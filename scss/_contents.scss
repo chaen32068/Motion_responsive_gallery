@@ -4,17 +4,13 @@ main {
   margin-left: 400px;
 
   ul {
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
     margin-right: 20px;
     margin-bottom: 10px;
 
-    &::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
     li {
-      float: right;
       width: 100px;
       height: 26px;
       margin-right: 20px;
@@ -76,5 +72,41 @@ main {
         }
       }
     }
+  }
+}
+
+// 반응형
+@media screen and (max-width: $web){
+  main {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: $tabletB){
+  main section article {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: $tabletM){
+  main section article {
+    width: 33.333%;
+  }
+}
+
+@media screen and (max-width: $tabletS){
+  main {
+    ul {
+      justify-content: center;
+    }
+    section article {
+    width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile){
+  main section article {
+    width: 100%;
   }
 }

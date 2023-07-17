@@ -61,3 +61,63 @@ header {
     }
   }
 }
+
+// 반응형
+@media screen and (max-width: $web){
+  header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+
+    h1 {
+      left: 50px;
+      transform: translateY(-50%);
+      font: bold 24px/1 'orbitron';
+
+      &::before, &::after {
+        display: none;
+      }
+    }
+
+    ul {
+      right: 50px;
+      bottom: 27px;
+      left: auto;
+
+      li {
+
+        &:hover {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletS){
+  header {
+    h1 {
+      left: 20px;
+    }
+    ul {
+      right: 20px;
+      
+      li {
+        a span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile){
+  header {
+    h1 {
+      font-size: 20px;
+    }
+    ul li {
+      margin-left: 3px;
+    }
+  }
+}
